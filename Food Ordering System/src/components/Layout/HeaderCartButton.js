@@ -8,6 +8,7 @@ const HeaderCartButton = (props) => {
   const cartCtx = useContext(CartContext);
   const { items } = cartCtx; //object destructuring
   const numberOfCartItems = items.reduce((curNumber, item) => {
+    // Reduce is built in javascript function which has 2 aruguments ie funtion and stating value(in this case). It reduces the array into single number. The function inside reduce() also has 2 arguments. Initally curNumber = 0 but  after execution of reduce function, it changes and numberOfCartItems gets that value as well.
     return curNumber + item.amount;
   }, 0);
 
