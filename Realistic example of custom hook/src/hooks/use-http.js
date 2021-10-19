@@ -4,7 +4,6 @@ import { useState, useCallback } from 'react';
 const useHttp = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-
   const sendRequest = useCallback(async (requestConfig, applyData) => {
     setIsLoading(true);
     setError(null);
@@ -18,7 +17,6 @@ const useHttp = () => {
       if (!response.ok) {
         throw new Error('Request failed!');
       }
-
       const data = await response.json();
       applyData(data);
     } catch (err) {
